@@ -1,3 +1,14 @@
+/*
+Define the Student structure with the following fields: a forename, a surname (being strings), an index number being an integer number 
+and an array/list of his marks (empty by default, you are allowed to limit the number of students's marks). 
+Implement the following methods of the structure:
+• the constructor with parameters for the first three fields of the student with some empty/zero default values,
+• set & get methods for the first three fields of the student (i.e., getSurname, setSurname, etc.),
+• addMark – adding a new mark (given as a parameter) for the student (check if the mark is correct, e.g. between 2 and 5),
+• avgGrade – computing the average grade for the student by calculating the arithmetic mean of his marks,
+• print – printing all the data of the student.
+Test all the structure capabilities – create an array of the students and let the user manage them.
+*/
 
 #include "stdafx.h"
 #include <iostream>
