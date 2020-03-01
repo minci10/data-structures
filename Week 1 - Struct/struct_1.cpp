@@ -15,6 +15,7 @@ Test all the structure capabilities – create an array of the employees and let
 struct Employee {
 
 private:
+	
 	std::string forename;
 	std::string surname;
 	std::string position;
@@ -22,6 +23,7 @@ private:
 
 
 public:
+	
 	Employee(std::string,std::string,std::string);
 	void setSalary(double);
 	double getSalary()const;
@@ -112,7 +114,14 @@ void Employee::print()const {
 
 
 int main()
-{	Employee emp[5];	emp[0].setForename("Muhammet");	emp[0].setSurname("Inci");	emp[0].setPosition("CEO");	emp[0].setSalary(15000);	emp[0].print();
+{
+
+	Employee emp[5];
+	emp[0].setForename("Muhammet");
+	emp[0].setSurname("Inci");
+	emp[0].setPosition("CEO");
+	emp[0].setSalary(15000);
+	emp[0].print();
 
 	return 0;
 }
