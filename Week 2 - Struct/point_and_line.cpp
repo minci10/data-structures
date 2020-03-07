@@ -146,8 +146,8 @@ int main()
 	{
 		std::cout << "p2 is on the l1" << std::endl;
 	}
-	Line l2(5,3);
-	Point p4(3,0);
+	Line l2(1.5,3.5);
+	Point p4(3,2);
 	Line ln = l2.orthogonalLine(p4);
 	ln.print();
 	return 0;
