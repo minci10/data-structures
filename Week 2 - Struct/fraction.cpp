@@ -1,8 +1,8 @@
 /*
-Define the Fraction structure representing vulgar fractions. 
+Define the Fraction structure representing vulgar fractions.
 Implement the following public methods of the structure:
 • the default constructor creating the fraction being the zero value,
-• the constructor with two parameters for the nominator and the denominator of the 
+• the constructor with two parameters for the nominator and the denominator of the
 fraction (the denominator should have a default value),
 • the printing method,
 • the comparison operators <, <=, >, >=, == and !=,
@@ -25,16 +25,16 @@ private:
 public:
 	Fraction(int = 0, int = 1);
 	void print() const;
-	bool operator==(const Fraction&) const;
-	bool operator<(const Fraction&) const;
-	bool operator>(const Fraction&) const;
-	bool operator>=(const Fraction&) const;
-	bool operator<=(const Fraction&) const;
-	bool operator!=(const Fraction&) const;
-	Fraction operator*(const Fraction&) const;
-	Fraction operator+(const Fraction&) const;
-	Fraction operator-(const Fraction&) const;
-	Fraction operator/(const Fraction&) const;
+	bool operator==(const Fraction &right) const;
+	bool operator<(const Fraction &right) const;
+	bool operator>(const Fraction &right) const;
+	bool operator>=(const Fraction &right) const;
+	bool operator<=(const Fraction &right) const;
+	bool operator!=(const Fraction &right) const;
+	Fraction operator*(const Fraction &right) const;
+	Fraction operator+(const Fraction &right) const;
+	Fraction operator-(const Fraction &right) const;
+	Fraction operator/(const Fraction &right) const;
 	void realValue();
 	int gcd_Finder(int,int) const;
 
@@ -62,43 +62,43 @@ void Fraction::print() const {
 
 }
 
-bool Fraction::operator== (const Fraction& right) const {
+bool Fraction::operator== (const Fraction &right) const {
 
 	return nom * right.denom == denom * right.nom;
 
 }
 
-bool Fraction::operator< (const Fraction& right) const {
+bool Fraction::operator< (const Fraction &right) const {
 
 	return nom * right.denom < denom * right.nom;
 
 }
 
-bool Fraction::operator> (const Fraction& right) const {
+bool Fraction::operator> (const Fraction &right) const {
 
 	return nom * right.denom > denom * right.nom;
 
 }
 
-bool Fraction::operator>= (const Fraction& right) const {
+bool Fraction::operator>= (const Fraction &right) const {
 
 	return nom * right.denom >= denom * right.nom;
 
 }
 
-bool Fraction::operator<= (const Fraction& right) const {
+bool Fraction::operator<= (const Fraction &right) const {
 
 	return nom * right.denom <= denom * right.nom;
 
 }
 
-bool Fraction::operator!= (const Fraction& right) const {
+bool Fraction::operator!= (const Fraction &right) const {
 
 	return nom * right.denom != denom * right.nom;
 
 }
 
-Fraction Fraction::operator* (const Fraction& right) const {
+Fraction Fraction::operator* (const Fraction &right) const {
 
 	int res_nom = nom*right.nom;
 	int res_denom = denom*right.denom;
@@ -107,7 +107,7 @@ Fraction Fraction::operator* (const Fraction& right) const {
 
 }
 
-Fraction Fraction::operator+ (const Fraction& right) const {
+Fraction Fraction::operator+ (const Fraction &right) const {
 
 	int res_nom = (right.denom*nom) + (denom*right.nom);
 	int res_denom = denom*right.denom;
@@ -116,7 +116,7 @@ Fraction Fraction::operator+ (const Fraction& right) const {
 
 }
 
-Fraction Fraction::operator- (const Fraction& right) const {
+Fraction Fraction::operator- (const Fraction &right) const {
 
 	int res_nom = (right.denom*nom) - (denom*right.nom);
 	int res_denom = denom*right.denom;
@@ -125,7 +125,7 @@ Fraction Fraction::operator- (const Fraction& right) const {
 
 }
 
-Fraction Fraction::operator/ (const Fraction& right) const {
+Fraction Fraction::operator/ (const Fraction &right) const {
 
 	int res_nom = nom*right.denom;
 	int res_denom = denom*right.nom;
