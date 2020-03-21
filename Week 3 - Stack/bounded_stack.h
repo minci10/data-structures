@@ -2,24 +2,23 @@
 Write a program which implements a bounded stack (a Last-In-First-Out structure using
 sequential memory storage), aimed at storing real numbers, and a set of methods operating
 on this structure:
-• the constructor with the size of the stack as a parameter (with memory allocation),
-• the copy-constructor (with memory allocation),
-• the assignment operator= (with memory dellocation and allocation),
-• the comparison operator==,
-• the destructor (with memory deallocation),
-• push – adding a real number to the stack or throwing a full stack exception,
-• pop – removig from the stack a real number pushed there most recently or throwing
+â€¢ the constructor with the size of the stack as a parameter (with memory allocation),
+â€¢ the copy-constructor (with memory allocation),
+â€¢ the assignment operator= (with memory dellocation and allocation),
+â€¢ the comparison operator==,
+â€¢ the destructor (with memory deallocation),
+â€¢ push â€“ adding a real number to the stack or throwing a full stack exception,
+â€¢ pop â€“ removig from the stack a real number pushed there most recently or throwing
 an empty stack exception,
-• top – returning the most recently pushed number or throwing an empty stack
+â€¢ top â€“ returning the most recently pushed number or throwing an empty stack
 exception,
-• print – printing the values which are on the stack currently, starting from the one
+â€¢ print â€“ printing the values which are on the stack currently, starting from the one
 pushed recently,
-• empty – informing whether the stack is empty,
-• size – returning the number of the items on the stack,
-• clear – removing all the items from the stack.
+â€¢ empty â€“ informing whether the stack is empty,
+â€¢ size â€“ returning the number of the items on the stack,
+â€¢ clear â€“ removing all the items from the stack.
 */
 
-#pragma once
 #include <stdexcept>
 #include <iostream>
 
