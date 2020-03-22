@@ -45,10 +45,10 @@ public:
 	void operator=(const Stack&);
 	void clear();
 
-
 };
 
 Stack::Stack(int max_size) {
+	
 	if (max_size < 1)
 	{
 		throw std::invalid_argument("Wrong stack size");
@@ -56,15 +56,16 @@ Stack::Stack(int max_size) {
 	capacity = max_size;
 	data = new int[capacity];
 
-
 }
 
 Stack::~Stack() {
 
 	delete [] data;
+	
 }
 
 void Stack::push(int num) {
+	
 	if (counter == capacity)
 	{
 		throw std::out_of_range("Stack is full");
@@ -72,7 +73,6 @@ void Stack::push(int num) {
 
 	data[counter++] = num;
 	
-
 }
 
 int Stack::pop() {
@@ -83,7 +83,6 @@ int Stack::pop() {
 	}
 
 	return data[--counter];
-
 
 }
 
@@ -118,6 +117,7 @@ bool Stack::empty()const {
 }
 
 int Stack::top()const {
+	
 	if (counter==0)
 	{
 		throw std::logic_error("Stack is empty");
@@ -141,7 +141,6 @@ Stack::Stack(const Stack& s) {
 	{
 		data[i] = s.data[i];
 	}
-	
 
 }
 
@@ -160,14 +159,13 @@ bool Stack::operator==(const Stack& s)const {
 
  void Stack::operator=(const Stack& s) {
 
-	 delete [] data;
+	delete [] data;
 	counter = s.counter;
 	capacity = s.capacity;
 	data = new int[capacity];
 	for (int i = 0; i < counter; i++)
 	{
 		data[i] = s.data[i];
-		
 	}
 }
 
