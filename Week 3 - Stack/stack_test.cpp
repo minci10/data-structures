@@ -12,10 +12,8 @@ otherwise,
 #include "stdafx.h"
 #include "bounded_stack.h"
 
-
 int main()
 {
-
 	Stack s1(5);
 	s1.push(1);
 	s1.push(2);
