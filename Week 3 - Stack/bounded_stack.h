@@ -19,6 +19,7 @@ pushed recently,
 • clear – removing all the items from the stack.
 */
 
+#pragma once
 #include <stdexcept>
 #include <iostream>
 
@@ -42,13 +43,14 @@ public:
 	int top()const;
 	int size() const;
 	bool operator==(const Stack&) const;
-	void operator=(const Stack&);
+	Stack& operator=(const Stack&);
 	void clear();
+
 
 };
 
 Stack::Stack(int max_size) {
-	
+
 	if (max_size < 1)
 	{
 		throw std::invalid_argument("Wrong stack size");
@@ -60,12 +62,12 @@ Stack::Stack(int max_size) {
 
 Stack::~Stack() {
 
-	delete [] data;
-	
+	delete[] data;
+
 }
 
 void Stack::push(int num) {
-	
+
 	if (counter == capacity)
 	{
 		throw std::out_of_range("Stack is full");
@@ -117,11 +119,12 @@ bool Stack::empty()const {
 }
 
 int Stack::top()const {
-	
+
 	if (counter==0)
 	{
 		throw std::logic_error("Stack is empty");
 	}
+
 	return data[counter - 1];
 
 }
@@ -141,7 +144,7 @@ Stack::Stack(const Stack& s) {
 	{
 		data[i] = s.data[i];
 	}
-
+	
 }
 
 bool Stack::operator==(const Stack& s)const {
@@ -155,23 +158,27 @@ bool Stack::operator==(const Stack& s)const {
 		}
 	}
 	return equality;
+
 }
 
- void Stack::operator=(const Stack& s) {
+ Stack& Stack::operator=(const Stack& s) {
 
-	delete [] data;
+	delete[] data;
 	counter = s.counter;
 	capacity = s.capacity;
 	data = new int[capacity];
 	for (int i = 0; i < counter; i++)
 	{
 		data[i] = s.data[i];
+		
 	}
+	return *this;
+
 }
 
  void Stack::clear() {
 
-	 delete [] data;
+	 delete[] data;
 	 counter = 0;
 	 data = new int[capacity];
 
