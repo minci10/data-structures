@@ -19,7 +19,6 @@ pushed recently,
 • clear – removing all the items from the stack.
 */
 
-#pragma once
 #include <stdexcept>
 #include <iostream>
 
