@@ -16,7 +16,7 @@ empty queue exception,
 • empty – informing whether the queue is empty,
 • size – returning the number of items in the queue,
 • clear – removing all the items from the queue.
-/*
+*/
 
 #include <iostream>
 #include <stdexcept>
