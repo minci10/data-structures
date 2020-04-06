@@ -15,30 +15,38 @@ otherwise,
 int main()
 {
 	Stack s1(5);
+
 	s1.push(1);
 	s1.push(2);
 	s1.push(3);
 	s1.push(4);
 	s1.push(5);
-	s1.print();
-	s1.pop();
-	s1.pop();
-	s1.print();
-	std::cout << "The top element is " << s1.top() << std::endl;
-	if (!s1.empty())
-	{
-		std::cout << "Stack is not empty and has " << s1.size() << " element" <<std::endl;
-	}
+
+	s1.print(); //5 4 3 2 1
+	std::cout << "Size: " << s1.size() << std::endl; //5
+	std::cout << "Pop: " << s1.pop() << std::endl; //5
+	std::cout << "Size: " << s1.size() << std::endl; //4
+	std::cout << "Top: " << s1.top() << std::endl; //4
+	s1.print(); //4 3 2 1
+
 	Stack s2 = s1;
-	s2.print();
-	if (s1==s2)
-	{
-		std::cout << "These two stacks are equal" << std::endl;
-	}
-	s2.pop();
-	s2.print();
-	s1.clear();
+
+	s2.print(); //4 3 2 1
+	s2.push(6);
+	s2.print(); //6 4 3 2 1
+
+	s1 = s2;
+
+	if (s1 == s2)
+		std::cout << "The stacks are equal." << std::endl; //yes
+
+	std::cout << "Pop: " << s1.pop() << std::endl; //6
+	s1.print(); //4 3 2 1
+	s2.print(); //6 4 3 2 1
+
 	s2.clear();
+	s1.print(); //4 3 2 1
+	s2.print(); //empty
 	
     return 0;
 }
