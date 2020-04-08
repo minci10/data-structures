@@ -1,5 +1,3 @@
-// stack_with_linked_list.cpp : Defines the entry point for the console application.
-//
 /*
 The program should use all these methods to make the operations as follows:
 1) create a stack containing the numbers given by the user,
