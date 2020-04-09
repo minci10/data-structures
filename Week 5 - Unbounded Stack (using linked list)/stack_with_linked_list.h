@@ -1,22 +1,22 @@
 /*
 Write a program which implements an unbounded stack (a Last-In-First-Out structure using
-non-sequential memory storage – the linked list), aimed at storing real numbers, and a set of
+non-sequential memory storage â€“ the linked list), aimed at storing real numbers, and a set of
 methods operating on this structure:
-• the default counstructor,
-• the copy-constructor (with memory allocation),
-• the assignment operator= (with memory dellocation and allocation),
-• the comparison operator==,
-• the destructor (with memory deallocation),
-• push – adding a real number to the stack (with memory allocation),
-• pop – removig from the stack a real number pushed there most recently or throwing
+â€¢ the default counstructor,
+â€¢ the copy-constructor (with memory allocation),
+â€¢ the assignment operator= (with memory dellocation and allocation),
+â€¢ the comparison operator==,
+â€¢ the destructor (with memory deallocation),
+â€¢ push â€“ adding a real number to the stack (with memory allocation),
+â€¢ pop â€“ removig from the stack a real number pushed there most recently or throwing
 an empty stack exception (with memory deallocation),
-• top – returning the most recently pushed number or throwing an empty stack
+â€¢ top â€“ returning the most recently pushed number or throwing an empty stack
 exception,
-• print – printing the values which are on the stack currently, starting from the one
+â€¢ print â€“ printing the values which are on the stack currently, starting from the one
 pushed recently,
-• empty – informing whether the stack is empty,
-• size – returning the number of the items on the stack,
-• clear – removing all the items from the stack (with memory deallocation).
+â€¢ empty â€“ informing whether the stack is empty,
+â€¢ size â€“ returning the number of the items on the stack,
+â€¢ clear â€“ removing all the items from the stack (with memory deallocation).
 */
 
 #include <iostream>
@@ -63,16 +63,18 @@ public:
 
 Stack::Stack(const Stack& s) {
 
+	
+	Node* end = nullptr;
 	Node* walker = s.head;
-	for (int i = s.counter-1; i >= 0; i--)
+	while (walker != nullptr)
 	{
-		for (int j = 0; j < i; j++)
-		{
-			walker = walker->next;
-		}
-		Node* a = new Node(walker->value, head);
-		head = a;
-		walker = s.head;
+		Node* creator = new Node(walker->value);
+		if (end != nullptr)
+			end->next = creator;
+		else
+			head = creator;
+		end = creator;
+		walker = walker->next;
 	}
 
 	counter = s.counter;
@@ -197,23 +199,18 @@ bool Stack::operator==(const Stack& s)const {
 
 Stack Stack::operator=(const Stack& s) {
 
-	while (head != nullptr)
-	{
-		Node* killer = head;
-		head = killer->next;
-		delete killer;
-	}
-	head = nullptr;
+	clear();
+	Node* end = nullptr;
 	Node* walker = s.head;
-	for (int i = s.counter - 1; i >= 0; i--)
+	while (walker != nullptr)
 	{
-		for (int j = 0; j < i; j++)
-		{
-			walker = walker->next;
-		}
-		Node* a = new Node(walker->value, head);
-		head = a;
-		walker = s.head;
+		Node* creator = new Node(walker->value);
+		if (end != nullptr)
+			end->next = creator;
+		else
+			head = creator;
+		end = creator;
+		walker = walker->next;
 	}
 	counter = s.counter;
 	return *this;
