@@ -1,3 +1,13 @@
+/*
+The program should use all these methods to make the operations as follows:
+1) create a vector of integers containing the numbers given by the user,
+2) print the contents of the vector (with the help of the indexing operator),
+3) remove the last value from the vector,
+4) print the first and the last number,
+5) print the number of values in the vector if it is nonempty, or an appropriate message otherwise,
+6) clear the vector.
+Compare your implementation of the container with the built-in container delivered in <vector> library
+*/
 
 #include "stdafx.h"
 #include <iostream>
