@@ -54,7 +54,7 @@ public:
 	bool empty() const;
 	void print() const;
 	int top() const;
-	Stack operator=(const Stack& s);
+	Stack& operator=(const Stack& s);
 	bool operator==(const Stack& s)const;
 
 };
@@ -197,7 +197,7 @@ bool Stack::operator==(const Stack& s)const {
 	else return false;
 }
 
-Stack Stack::operator=(const Stack& s) {
+Stack& Stack::operator=(const Stack& s) {
 
 	clear();
 	Node* end = nullptr;
