@@ -1,3 +1,22 @@
+/*
+Write a program which implements an unbounded vector container (using sequential
+memory storage) as a template structure (aimed at storing values of any type), and a set of
+methods operating on this structure:
+• the default constructor (with some starting memory allocation),
+• the destructor (with memory deallocation),
+• the copy-constructor (with memory allocation),
+• the assignment operator= (with memory dellocation and allocation),
+• the comparison operator==,
+• the indexing operator[],
+• push_back – adding a value to the vector (with memory allocation if necessary),
+• pop_back – removig the last value from the vector or throwing an empty vector exception,
+• front – returning the first value or throwing an empty vector exception,
+• back – returning the last value or throwing an empty vector exception,
+• empty – informing whether the vector is empty,
+• size – returning the number of items in the vector,
+• clear – removing all the items from the vector.
+*/
+
 #pragma once
 
 #include <iostream>
