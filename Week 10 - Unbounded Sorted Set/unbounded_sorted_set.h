@@ -218,7 +218,7 @@ int Set<T>::count(T value) const {
 
 	
 	Node* walker = head;
-	while (walker != nullptr)
+	while (walker != nullptr && walker->value <= value)
 	{
 		if (walker->value == value)
 		{
