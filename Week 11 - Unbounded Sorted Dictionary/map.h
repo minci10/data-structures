@@ -3,25 +3,26 @@ Write a program which implements an unbounded sorted dictionary (using the singl
 double-linked list) as a template structure (aimed at storing unique keys of any type
 associated with non-unique values of any type and ordering them in ascending order by keys
 - from the lowest to the greatest), and the methods operating on this structure:
-• the default constructor,
-• the destructor (with memory deallocation),
-• the copy-constructor (with memory allocation),
-• the assignment operator= (with memory dellocation and allocation),
-• the comparison operator==,
-• the indexing operator[] – giving the access to the value associated with the key given
+â€¢ the default constructor,
+â€¢ the destructor (with memory deallocation),
+â€¢ the copy-constructor (with memory allocation),
+â€¢ the assignment operator= (with memory dellocation and allocation),
+â€¢ the comparison operator==,
+â€¢ the indexing operator[] â€“ giving the access to the value associated with the key given
 as the parameter (if the key doesn't exist it is inserted to the dictionary with memory
 allocation, in ascending order with a default value associated),
-• erase – removig the item of the dictionary with the given key if exists (with memory
+â€¢ erase â€“ removig the item of the dictionary with the given key if exists (with memory
 deallocation) and returning the number of items removed (0 or 1),
-• count – returning the number of occurences of a key in the dictionary (0 or 1),
-• empty – informing whether the dictionary is empty,
-• size – returning the number of items in the dictionary,
-• clear – removing all the items from the dictionary (with memory deallocation).
+â€¢ count â€“ returning the number of occurences of a key in the dictionary (0 or 1),
+â€¢ empty â€“ informing whether the dictionary is empty,
+â€¢ size â€“ returning the number of items in the dictionary,
+â€¢ clear â€“ removing all the items from the dictionary (with memory deallocation).
 */
 #pragma once
 
 #include <stdexcept>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
